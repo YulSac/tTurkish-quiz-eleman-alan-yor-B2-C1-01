@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR M?lakat Testi - Derya Han?m</title>
+    <title>HR Mülakat Testi - Derya Hanım</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
@@ -152,22 +152,22 @@
 
     <!-- INTRO SCREEN -->
     <div id="intro-screen" class="container">
-        <h1 class="main-title">Ho? Geldiniz</h1>
+        <h1 class="main-title">Hoş Geldiniz</h1>
         <div class="profile-container">
-            <img src="https://avahr.com/wp-content/uploads/2021/12/HR-Assistant-Job-Description-Template.jpg.webp" alt="Derya Han?m">
+            <img src="https://avahr.com/wp-content/uploads/2021/12/HR-Assistant-Job-Description-Template.jpg.webp" alt="Derya Hanım">
         </div>
         <div class="text-lg leading-relaxed mb-6">
-            <p>Merhaba, ben <strong>Derya Han?m</strong></p>
-            <p class="mt-2 text-slate-300 text-sm md:text-base">?rsan Tekstil A.?. b?nyesindeki "Tekstil ?retim M?d?r?" pozisyonu i?in m?lakat sim?lasyonuna ho? geldiniz</p>
-            <p class="mt-4 font-semibold text-[#B47287]">Ba?ar?lar diliyorum</p>
+            <p>Merhaba, ben <strong>Derya Hanım</strong></p>
+            <p class="mt-2 text-slate-300 text-sm md:text-base">Örsan Tekstil A.Ş. bünyesindeki "Tekstil Üretim Müdürü" pozisyonu için mülakat simülasyonuna hoş geldiniz</p>
+            <p class="mt-4 font-semibold text-[#B47287]">Başarılar diliyorum</p>
         </div>
-        <button onclick="startApp()" class="btn-action">Teste Ba?la</button>
+        <button onclick="startApp()" class="btn-action">Teste Başla</button>
     </div>
 
     <!-- TEST SCREEN -->
     <div id="test-screen" class="container hidden">
         <div class="flex justify-between items-center mb-2 text-xs text-slate-400 uppercase tracking-widest">
-            <span id="part-title">B?l?m 1</span>
+            <span id="part-title">Bölüm 1</span>
             <span id="question-counter">Soru: 1/20</span>
         </div>
         <div class="progress-bar">
@@ -178,18 +178,18 @@
             <p id="question-text" class="text-xl font-semibold mb-6"></p>
             <div id="options-list"></div>
             <div id="nav-container" class="mt-6 text-left hidden">
-                <button id="btn-back" onclick="goBack()" class="btn-outline">Geri D?n</button>
+                <button id="btn-back" onclick="goBack()" class="btn-outline">Geri Dön</button>
             </div>
         </div>
     </div>
 
     <!-- RESULT SCREEN -->
     <div id="result-screen" class="container hidden">
-        <h1 class="main-title">M?lakat Sonucu</h1>
+        <h1 class="main-title">Mülakat Sonucu</h1>
         <div id="score-display" class="text-5xl font-bold mb-4 text-[#FFF200]">0</div>
-        <div id="result-label" class="text-2xl font-semibold mb-6 text-[#B47287]">Sonu? Y?kleniyor...</div>
+        <div id="result-label" class="text-2xl font-semibold mb-6 text-[#B47287]">Sonuç Yükleniyor...</div>
         <div class="bg-slate-800/50 p-6 rounded-xl mb-6 text-left border border-slate-700">
-            <h3 class="font-bold text-slate-200 mb-2">Performans ?zeti:</h3>
+            <h3 class="font-bold text-slate-200 mb-2">Performans Özeti:</h3>
             <ul class="text-sm text-slate-400 space-y-2" id="stats-list"></ul>
         </div>
         <button onclick="location.reload()" class="btn-action">Tekrar Dene</button>
@@ -199,190 +199,190 @@
         const appData = {
             "parts": [
                 {
-                    "title": "B?l?m 1: ??veren Sorular?",
+                    "title": "Bölüm 1: İşveren Soruları",
                     "questions": [
                         {
-                            "question": "Bize biraz kendinizden ve tekstil sekt?r?ndeki i? tecr?benizden bahseder misiniz?",
+                            "question": "Bize biraz kendinizden ve tekstil sektöründeki iş tecrübenizden bahseder misiniz?",
                             "options": [
-                                { "text": "Sekiz y?ld?r kuma? ?retimi ve tedarik zinciri y?netimindeyim", "correct": true },
-                                { "text": "Tekstil sekt?r?yle ilgim yok ama ??renmeye haz?r?m", "correct": false },
-                                { "text": "Ge?en y?l m?lakat yapt?m, g?zel bir deneyimdi", "correct": false },
-                                { "text": "Kariyer.net ?zerinden bu pozisyona ba?vurdum", "correct": false }
+                                { "text": "Sekiz yıldır kumaş üretimi ve tedarik zinciri yönetimindeyim", "correct": true },
+                                { "text": "Tekstil sektörüyle ilgim yok ama öğrenmeye hazırım", "correct": false },
+                                { "text": "Geçen yıl mülakat yaptım, güzel bir deneyimdi", "correct": false },
+                                { "text": "Kariyer.net üzerinden bu pozisyona başvurdum", "correct": false }
                             ]
                         },
                         {
-                            "question": "Tekstil ?retim s?re?lerinde verimlili?i art?rmak i?in hangi y?ntemleri kulland?n?z?",
+                            "question": "Tekstil üretim süreçlerinde verimliliği artırmak için hangi yöntemleri kullandınız?",
                             "options": [
-                                { "text": "Haftal?k toplant?lar d?zenlemeyi severim", "correct": false },
-                                { "text": "Kaizen ile s?rekli iyile?tirme yaparak maliyetleri %15 d???rd?k", "correct": true },
-                                { "text": "Verimlili?i art?rmak i?in personel say?s?n? azaltt?k", "correct": false },
-                                { "text": "Bu konuda deneyimim bulunmamaktad?r", "correct": false }
+                                { "text": "Haftalık toplantılar düzenlemeyi severim", "correct": false },
+                                { "text": "Kaizen ile sürekli iyileştirme yaparak maliyetleri %15 düşürdük", "correct": true },
+                                { "text": "Verimliliği artırmak için personel sayısını azalttık", "correct": false },
+                                { "text": "Bu konuda deneyimim bulunmamaktadır", "correct": false }
                             ]
                         },
                         {
-                            "question": "Ekip y?netimi konusundaki yakla??m?n?z nedir? Ekibinize nas?l yetki verirsiniz?",
+                            "question": "Ekip yönetimi konusundaki yaklaşımınız nedir? Ekibinize nasıl yetki verirsiniz?",
                             "options": [
-                                { "text": "Ekipteki herkese e?it maa? veririm", "correct": false },
-                                { "text": "M?lakatlarda adaylar? titizlikle de?erlendiririm", "correct": false },
-                                { "text": "G??l? y?nleri belirler, ekibi yetkilendirir ve sorumluluklar? tan?mlar?m", "correct": true },
-                                { "text": "Ba??ms?z ?al??may? tercih ederim, ekip istemiyorum", "correct": false }
+                                { "text": "Ekipteki herkese eşit maaş veririm", "correct": false },
+                                { "text": "Mülakatlarda adayları titizlikle değerlendiririm", "correct": false },
+                                { "text": "Güçlü yönleri belirler, ekibi yetkilendirir ve sorumlulukları tanımlarım", "correct": true },
+                                { "text": "Bağımsız çalışmayı tercih ederim, ekip istemiyorum", "correct": false }
                             ]
                         },
                         {
-                            "question": "Tedarik zinciri y?netimi konusunda ne t?r deneyimleriniz var?",
+                            "question": "Tedarik zinciri yönetimi konusunda ne tür deneyimleriniz var?",
                             "options": [
-                                { "text": "Lojisti?i optimize edip tedarik?i ili?kileriyle m?kemmellik sa?lad?m", "correct": true },
-                                { "text": "Sadece muhasebe departman?yla ?al??t?m", "correct": false },
+                                { "text": "Lojistiği optimize edip tedarikçi ilişkileriyle mükemmellik sağladım", "correct": true },
+                                { "text": "Sadece muhasebe departmanıyla çalıştım", "correct": false },
                                 { "text": "Tedarik zinciri nedir tam olarak bilmiyorum", "correct": false },
-                                { "text": "?nsan kaynaklar? alan?nda ?al??t?m", "correct": false }
+                                { "text": "İnsan kaynakları alanında çalıştım", "correct": false }
                             ]
                         },
                         {
-                            "question": "Kalite y?netimi s?re?lerinde nas?l bir rol ?stlendiniz? Somut bir ?rnek verir misiniz?",
+                            "question": "Kalite yönetimi süreçlerinde nasıl bir rol üstlendiniz? Somut bir örnek verir misiniz?",
                             "options": [
-                                { "text": "Kaliteyi ?nemserim ama somut ?rnek akl?ma gelmiyor", "correct": false },
-                                { "text": "Sistemi ba?tan tasarlayarak ?r?n iade oran?n? %30 azaltt?m", "correct": true },
-                                { "text": "Kalite y?netimi m?d?r?n?n g?revi, benim de?il", "correct": false },
-                                { "text": "Kalite belgelerini ar?ivledim", "correct": false }
+                                { "text": "Kaliteyi önemserim ama somut örnek aklıma gelmiyor", "correct": false },
+                                { "text": "Sistemi baştan tasarlayarak ürün iade oranını %30 azalttım", "correct": true },
+                                { "text": "Kalite yönetimi müdürünün görevi, benim değil", "correct": false },
+                                { "text": "Kalite belgelerini arşivledim", "correct": false }
                             ]
                         },
                         {
-                            "question": "Tekstil M?hendisli?i e?itiminiz bu pozisyon i?in sizi nas?l haz?rlad??",
+                            "question": "Tekstil Mühendisliği eğitiminiz bu pozisyon için sizi nasıl hazırladı?",
                             "options": [
-                                { "text": "Kuma? ?retimi, lif ve s?re? y?netiminde teknik temel edindim", "correct": true },
-                                { "text": "?niversite e?itiminin i? hayat?yla pek ilgisi yok", "correct": false },
-                                { "text": "Hukuk fak?ltesinden mezun oldum", "correct": false },
-                                { "text": "E?itimim boyunca yaln?zca yabanc? dil ??rendim", "correct": false }
+                                { "text": "Kumaş üretimi, lif ve süreç yönetiminde teknik temel edindim", "correct": true },
+                                { "text": "Üniversite eğitiminin iş hayatıyla pek ilgisi yok", "correct": false },
+                                { "text": "Hukuk fakültesinden mezun oldum", "correct": false },
+                                { "text": "Eğitimim boyunca yalnızca yabancı dil öğrendim", "correct": false }
                             ]
                         },
                         {
-                            "question": "G?ncel teknolojiyi tekstil ?retiminde nas?l kullan?yorsunuz?",
+                            "question": "Güncel teknolojiyi tekstil üretiminde nasıl kullanıyorsunuz?",
                             "options": [
-                                { "text": "Klasik y?ntemleri tercih ederim", "correct": false },
-                                { "text": "Sosyal medyay? aktif kullan?yorum", "correct": false },
-                                { "text": "ERP ve otomatik dokuma makinelerini ?retim s?re?lerine entegre ettim", "correct": true },
-                                { "text": "Bilgisayar kullanmay? biliyorum", "correct": false }
+                                { "text": "Klasik yöntemleri tercih ederim", "correct": false },
+                                { "text": "Sosyal medyayı aktif kullanıyorum", "correct": false },
+                                { "text": "ERP ve otomatik dokuma makinelerini üretim süreçlerine entegre ettim", "correct": true },
+                                { "text": "Bilgisayar kullanmayı biliyorum", "correct": false }
                             ]
                         },
                         {
-                            "question": "Problem ??zme yetkinli?inizi g?steren bir durumu anlat?r m?s?n?z?",
+                            "question": "Problem çözme yetkinliğinizi gösteren bir durumu anlatır mısınız?",
                             "options": [
-                                { "text": "Problemleri genellikle m?d?r?me b?rak?r?m", "correct": false },
-                                { "text": "Alternatif tedarik?i bulup ekibi organize ederek teslimat? korudum", "correct": true },
-                                { "text": "Problem ??kmamas? i?in hi?bir ?ey yapmam", "correct": false },
-                                { "text": "Sorunlar? genellikle g?rmezden gelmeyi tercih ederim", "correct": false }
+                                { "text": "Problemleri genellikle müdürüme bırakırım", "correct": false },
+                                { "text": "Alternatif tedarikçi bulup ekibi organize ederek teslimatı korudum", "correct": true },
+                                { "text": "Problem çıkmaması için hiçbir şey yapmam", "correct": false },
+                                { "text": "Sorunları genellikle görmezden gelmeyi tercih ederim", "correct": false }
                             ]
                         },
                         {
-                            "question": "Bu pozisyonda stratejik vizyonunuz nedir? ?irkete nas?l katk? sa?lamay? planl?yorsunuz?",
+                            "question": "Bu pozisyonda stratejik vizyonunuz nedir? Şirkete nasıl katkı sağlamayı planlıyorsunuz?",
                             "options": [
-                                { "text": "Maa??m? almak ve g?revimi yapmak istiyorum", "correct": false },
-                                { "text": "Teknik liderlikle operasyonu g??lendirip uzun vadeli b?y?meye katk? sa?lamak", "correct": true },
-                                { "text": "Hen?z d???nmedim", "correct": false },
-                                { "text": "Buradaki kadroyu tamamen de?i?tirmek istiyorum", "correct": false }
+                                { "text": "Maaşımı almak ve görevimi yapmak istiyorum", "correct": false },
+                                { "text": "Teknik liderlikle operasyonu güçlendirip uzun vadeli büyümeye katkı sağlamak", "correct": true },
+                                { "text": "Henüz düşünmedim", "correct": false },
+                                { "text": "Buradaki kadroyu tamamen değiştirmek istiyorum", "correct": false }
                             ]
                         },
                         {
-                            "question": "Mesleki nitelikleriniz aras?nda bu pozisyon i?in en ay?rt edici olan? hangisidir?",
+                            "question": "Mesleki nitelikleriniz arasında bu pozisyon için en ayırt edici olanı hangisidir?",
                             "options": [
-                                { "text": "?ngilizce biliyorum", "correct": false },
-                                { "text": "Teknik becerileri vizyonla birle?tirip operasyonu ve ekibi y?netebilmem", "correct": true },
-                                { "text": "?ok ?al??kan?m, erken gelip ge? gidiyorum", "correct": false },
-                                { "text": "Daha ?nce benzer bir m?lakattan ge?tim", "correct": false }
+                                { "text": "İngilizce biliyorum", "correct": false },
+                                { "text": "Teknik becerileri vizyonla birleştirip operasyonu ve ekibi yönetebilmem", "correct": true },
+                                { "text": "Çok çalışkanım, erken gelip geç gidiyorum", "correct": false },
+                                { "text": "Daha önce benzer bir mülakattan geçtim", "correct": false }
                             ]
                         }
                     ]
                 },
                 {
-                    "title": "B?l?m 2: Aday Sorular?",
+                    "title": "Bölüm 2: Aday Soruları",
                     "questions": [
                         {
-                            "question": "Bu pozisyonun sorumluluk alan? ve i? kapsam? hakk?nda daha fazla bilgi alabilir miyim?",
+                            "question": "Bu pozisyonun sorumluluk alanı ve iş kapsamı hakkında daha fazla bilgi alabilir miyim?",
                             "options": [
-                                { "text": "Sorumluluk alan? yok, sadece ?retim yap?yorsunuz", "correct": false },
-                                { "text": "Pozisyon; ?retim, kalite ve tedarik zinciri s?re?lerini kapsar", "correct": true },
-                                { "text": "Sorumluluklar? ilerleyen g?nlerde ??renirsiniz", "correct": false },
-                                { "text": "Sadece evrak i?leriyle ilgileneceksiniz", "correct": false }
+                                { "text": "Sorumluluk alanı yok, sadece üretim yapıyorsunuz", "correct": false },
+                                { "text": "Pozisyon; üretim, kalite ve tedarik zinciri süreçlerini kapsar", "correct": true },
+                                { "text": "Sorumlulukları ilerleyen günlerde öğrenirsiniz", "correct": false },
+                                { "text": "Sadece evrak işleriyle ilgileneceksiniz", "correct": false }
                             ]
                         },
                         {
-                            "question": "Br?t ve net maa? konusunda bilgi verebilir misiniz? Maa? beklentimi payla?abilir miyim?",
+                            "question": "Brüt ve net maaş konusunda bilgi verebilir misiniz? Maaş beklentimi paylaşabilir miyim?",
                             "options": [
-                                { "text": "Maa? hakk?nda konu?mak uygun de?il", "correct": false },
-                                { "text": "Br?t maa? aral???n? payla??r, beklentinizi de ??renmek isteriz", "correct": true },
-                                { "text": "Net maa? br?t maa?la ayn?d?r", "correct": false },
-                                { "text": "Maa? i? s?zle?mesinde yazmaz", "correct": false }
+                                { "text": "Maaş hakkında konuşmak uygun değil", "correct": false },
+                                { "text": "Brüt maaş aralığını paylaşır, beklentinizi de öğrenmek isteriz", "correct": true },
+                                { "text": "Net maaş brüt maaşla aynıdır", "correct": false },
+                                { "text": "Maaş iş sözleşmesinde yazmaz", "correct": false }
                             ]
                         },
                         {
-                            "question": "?irketin sundu?u yan haklar nelerdir? ?zel sa?l?k sigortas? ve yemek deste?i var m??",
+                            "question": "Şirketin sunduğu yan haklar nelerdir? Özel sağlık sigortası ve yemek desteği var mı?",
                             "options": [
                                 { "text": "Yan hak sunmuyoruz", "correct": false },
-                                { "text": "?zel sa?l?k sigortas?, yemek ve yol deste?i sunmaktay?z", "correct": true },
-                                { "text": "Yan haklar? kendiniz kar??laman?z gerekiyor", "correct": false },
-                                { "text": "Yaln?zca y?ll?k ?cretli izin hakk? veriyoruz", "correct": false }
+                                { "text": "Özel sağlık sigortası, yemek ve yol desteği sunmaktayız", "correct": true },
+                                { "text": "Yan hakları kendiniz karşılamanız gerekiyor", "correct": false },
+                                { "text": "Yalnızca yıllık ücretli izin hakkı veriyoruz", "correct": false }
                             ]
                         },
                         {
-                            "question": "Deneme s?resi ne kadar ve bu s?re?te nas?l bir de?erlendirme yap?l?yor?",
+                            "question": "Deneme süresi ne kadar ve bu süreçte nasıl bir değerlendirme yapılıyor?",
                             "options": [
-                                { "text": "Deneme s?resi yoktur", "correct": false },
-                                { "text": "?ki ayl?k deneme s?recinde uyum ve performans?n?z de?erlendirilir", "correct": true },
-                                { "text": "Deneme s?resi on y?ld?r", "correct": false },
-                                { "text": "De?erlendirme yap?lm?yor", "correct": false }
+                                { "text": "Deneme süresi yoktur", "correct": false },
+                                { "text": "İki aylık deneme sürecinde uyum ve performansınız değerlendirilir", "correct": true },
+                                { "text": "Deneme süresi on yıldır", "correct": false },
+                                { "text": "Değerlendirme yapılmıyor", "correct": false }
                             ]
                         },
                         {
-                            "question": "Performans primi sistemi var m?? Ba?ar?ya ba?l? ek ?deme nas?l hesaplan?yor?",
+                            "question": "Performans primi sistemi var mı? Başarıya bağlı ek ödeme nasıl hesaplanıyor?",
                             "options": [
                                 { "text": "Prim sistemi tamamen rastgele belirleniyor", "correct": false },
-                                { "text": "Evet, y?ll?k hedeflere dayal? performans primi sistemimiz mevcuttur", "correct": true },
-                                { "text": "Prim sadece ?st d?zey y?neticilere verilir", "correct": false },
+                                { "text": "Evet, yıllık hedeflere dayalı performans primi sistemimiz mevcuttur", "correct": true },
+                                { "text": "Prim sadece üst düzey yöneticilere verilir", "correct": false },
                                 { "text": "Prim yerine terfi veriyoruz", "correct": false }
                             ]
                         },
                         {
-                            "question": "Y?ll?k ?cretli izin hakk?m ne kadar? ?zin kullan?m? konusunda esneklik var m??",
+                            "question": "Yıllık ücretli izin hakkım ne kadar? İzin kullanımı konusunda esneklik var mı?",
                             "options": [
-                                { "text": "?zin hakk? bulunmamaktad?r", "correct": false },
-                                { "text": "Y?ll?k izin 14 i? g?n?d?r, esnek planlama desteklenir", "correct": true },
-                                { "text": "?zin almak neredeyse imk?ns?zd?r", "correct": false },
-                                { "text": "?zinleri yaln?zca A?ustos ay?nda kullanabilirsiniz", "correct": false }
+                                { "text": "İzin hakkı bulunmamaktadır", "correct": false },
+                                { "text": "Yıllık izin 14 iş günüdür, esnek planlama desteklenir", "correct": true },
+                                { "text": "İzin almak neredeyse imkânsızdır", "correct": false },
+                                { "text": "İzinleri yalnızca Ağustos ayında kullanabilirsiniz", "correct": false }
                             ]
                         },
                         {
-                            "question": "?hbar s?resi konusunda bilgi alabilir miyim? Olas? bir istifada s?re? nas?l i?liyor?",
+                            "question": "İhbar süresi konusunda bilgi alabilir miyim? Olası bir istifada süreç nasıl işliyor?",
                             "options": [
-                                { "text": "?stifa bildirim yapmadan direkt ayr?labilirsiniz", "correct": false },
-                                { "text": "K?deme ba?l? ihbar s?remiz 2-8 hafta aras?ndad?r", "correct": true },
-                                { "text": "?hbar s?resi yoktur", "correct": false },
-                                { "text": "?stifa etmek yasakt?r", "correct": false }
+                                { "text": "İstifa bildirim yapmadan direkt ayrılabilirsiniz", "correct": false },
+                                { "text": "Kıdeme bağlı ihbar süremiz 2-8 hafta arasındadır", "correct": true },
+                                { "text": "İhbar süresi yoktur", "correct": false },
+                                { "text": "İstifa etmek yasaktır", "correct": false }
                             ]
                         },
                         {
-                            "question": "?irketteki i? hiyerar?isi nas?l? Bu pozisyonda kime rapor verece?im?",
+                            "question": "Şirketteki iş hiyerarşisi nasıl? Bu pozisyonda kime rapor vereceğim?",
                             "options": [
-                                { "text": "Hiyerar?i yoktur", "correct": false },
-                                { "text": "Net hiyerar?imizde do?rudan Genel M?d?r'e rapor vereceksiniz", "correct": true },
-                                { "text": "Kime rapor verece?inizi sonradan ??renirsiniz", "correct": false },
-                                { "text": "?stedi?iniz ki?iyle ?al???rs?n?z", "correct": false }
+                                { "text": "Hiyerarşi yoktur", "correct": false },
+                                { "text": "Net hiyerarşimizde doğrudan Genel Müdür'e rapor vereceksiniz", "correct": true },
+                                { "text": "Kime rapor vereceğinizi sonradan öğrenirsiniz", "correct": false },
+                                { "text": "İstediğiniz kişiyle çalışırsınız", "correct": false }
                             ]
                         },
                         {
-                            "question": "?irket, ?al??anlar?n mesleki geli?imi i?in ne t?r olanaklar sunuyor?",
+                            "question": "Şirket, çalışanların mesleki gelişimi için ne tür olanaklar sunuyor?",
                             "options": [
-                                { "text": "Mesleki geli?im ?al??an?n kendi sorumlulu?undad?r", "correct": false },
-                                { "text": "Teknik e?itimler, konferanslar ve geli?im programlar?yla destekliyoruz", "correct": true },
-                                { "text": "E?itim b?t?emiz yok", "correct": false },
-                                { "text": "Sadece yeni mezunlara e?itim veriyoruz", "correct": false }
+                                { "text": "Mesleki gelişim çalışanın kendi sorumluluğundadır", "correct": false },
+                                { "text": "Teknik eğitimler, konferanslar ve gelişim programlarıyla destekliyoruz", "correct": true },
+                                { "text": "Eğitim bütçemiz yok", "correct": false },
+                                { "text": "Sadece yeni mezunlara eğitim veriyoruz", "correct": false }
                             ]
                         },
                         {
-                            "question": "?? s?zle?mesi ne zaman imzalanacak ve i?e ba?lama tarihinde esneklik var m??",
+                            "question": "İş sözleşmesi ne zaman imzalanacak ve işe başlama tarihinde esneklik var mı?",
                             "options": [
-                                { "text": "S?zl? anla?ma yeterlidir", "correct": false },
-                                { "text": "Teklif kabul?nden sonra imzalan?r, tarihi birlikte belirleriz", "correct": true },
-                                { "text": "S?zle?me deneme s?resi bitince imzalan?r", "correct": false },
+                                { "text": "Sözlü anlaşma yeterlidir", "correct": false },
+                                { "text": "Teklif kabulünden sonra imzalanır, tarihi birlikte belirleriz", "correct": true },
+                                { "text": "Sözleşme deneme süresi bitince imzalanır", "correct": false },
                                 { "text": "Esneklik yoktur", "correct": false }
                             ]
                         }
@@ -422,7 +422,7 @@
             const progress = (globalIndex / totalQuestionsCount) * 100;
             document.getElementById('progress-fill').style.width = `${progress}%`;
 
-            document.getElementById('question-text').innerHTML = `<span class="text-[#B47287]">Derya Han?m:</span> ${question.question}`;
+            document.getElementById('question-text').innerHTML = `<span class="text-[#B47287]">Derya Hanım:</span> ${question.question}`;
 
             const optionsList = document.getElementById('options-list');
             optionsList.innerHTML = '';
@@ -502,18 +502,18 @@
             document.getElementById('score-display').innerText = finalScore;
 
             let label = "";
-            if (finalScore >= 90) label = "M?kemmel � ??e al?nd?n?z! ??";
-            else if (finalScore >= 70) label = "?ok ?yi � G??l? bir aday ??";
-            else if (finalScore >= 50) label = "Orta � Biraz daha ?al??mal?s?n ??";
-            else label = "Yetersiz � Tekrar deneyin ??";
+            if (finalScore >= 90) label = "Mükemmel — İşe alındınız! 🎉";
+            else if (finalScore >= 70) label = "Çok İyi — Güçlü bir aday 👏";
+            else if (finalScore >= 50) label = "Orta — Biraz daha çalışmalısın 📚";
+            else label = "Yetersiz — Tekrar deneyin 🔄";
 
             document.getElementById('result-label').innerText = label;
 
             const statsList = document.getElementById('stats-list');
             statsList.innerHTML = `
-                <li>� Toplam Puan: ${finalScore} / 100</li>
-                <li>� Do?ru Cevap Say?s?: ${correctCount}</li>
-                <li>� M?lakat D?zeyi: B2/C1 Profesyonel</li>
+                <li>• Toplam Puan: ${finalScore} / 100</li>
+                <li>• Doğru Cevap Sayısı: ${correctCount}</li>
+                <li>• Mülakat Düzeyi: B2/C1 Profesyonel</li>
             `;
         }
     </script>
