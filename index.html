@@ -166,7 +166,7 @@
 
     <!-- TEST SCREEN -->
     <div id="test-screen" class="container hidden">
-        <div class="flex justify-between items-center mb-2 text-xs text-slate-400 uppercase tracking-widest">
+        <div class="flex justify-between items-center mb-2 uppercase tracking-widest" style="font-size: 0.72rem; color: #FFF200; font-weight: 600;">
             <span id="part-title">Bölüm 1</span>
             <span id="question-counter">Soru: 1/20</span>
         </div>
@@ -192,6 +192,19 @@
             <h3 class="font-bold text-slate-200 mb-2">Performans Özeti:</h3>
             <ul class="text-sm text-slate-400 space-y-2" id="stats-list"></ul>
         </div>
+
+        <!-- Author photo -->
+        <div class="profile-container" style="margin-bottom: 1.2rem;">
+            <img src="https://scontent.fyei6-1.fna.fbcdn.net/v/t39.30808-6/494413495_4230901987155369_773069001723369527_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_ohc=5A7OPvuqZe0Q7kNvwER8fOj&_nc_oc=Adngaqnsc5adWTKEw7mC6OoXZrSUmyVoq_tZOmZ9_9UiFSkQiwS0_4RXClbJZ_XGTOUvPzG857_FDXDw-QekHnw5&_nc_zt=23&_nc_ht=scontent.fyei6-1.fna&_nc_gid=ayei5C4NkIQYg6wku4464Q&oh=00_AfuEVwqoHx7FjSvfHZ4k4Ve_DQ295m1aOuzGu-Vjh1puaA&oe=69A3051A" alt="Yuliia Saçkesen">
+        </div>
+
+        <!-- Author info -->
+        <div class="bg-slate-800/50 p-5 rounded-xl mb-6 border border-slate-700 text-sm text-slate-300 leading-relaxed">
+            <p>Bu test, <strong class="text-[#B47287]">Yuliia Saçkesen</strong> tarafından YEE kursları kapsamında vibe coding uygulaması olarak geliştirilmiştir.</p>
+            <p class="mt-3">Mülakat hazırlığı hakkında daha fazla bilgi almak için e-posta ile iletişime geçebilirsiniz:</p>
+            <p class="mt-2 font-semibold text-[#FFF200]">huzurlukaizen@gmail.com</p>
+        </div>
+
         <button onclick="location.reload()" class="btn-action">Tekrar Dene</button>
     </div>
 
@@ -422,7 +435,10 @@
             const progress = (globalIndex / totalQuestionsCount) * 100;
             document.getElementById('progress-fill').style.width = `${progress}%`;
 
-            document.getElementById('question-text').innerHTML = `<span class="text-[#B47287]">Derya Hanım:</span> ${question.question}`;
+            const speakerLabel = currentPartIndex === 1
+                ? `<span class="text-[#B47287]">İş adayı:</span>`
+                : `<span class="text-[#B47287]">Derya Hanım:</span>`;
+            document.getElementById('question-text').innerHTML = `${speakerLabel} ${question.question}`;
 
             const optionsList = document.getElementById('options-list');
             optionsList.innerHTML = '';
