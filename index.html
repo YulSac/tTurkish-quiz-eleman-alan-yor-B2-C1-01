@@ -3,178 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>??veren Sorular? - Quiz</title>
+    <title>HR MÃ¼lakat Testi - Derya HanÄ±m</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { 
-            background-color: #1a2235; /* Òåìíî-ñèí³é ôîí ÿê íà ñêð³íøîò³ */
-            color: #e2e8f0; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-        .option-card { 
-            background-color: #232d45; /* Ñâ³òë³øèé ñèí³é äëÿ êàðòîê */
-            border: 1px solid #334155; 
+
+        .container {
+            width: 95%;
+            max-width: 700px;
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin: 1rem;
         }
-        .option-card:hover { 
-            background-color: #2d3753; 
-            border-color: #475569; 
-            cursor: pointer; 
-            transform: translateY(-1px);
+
+        .main-title {
+            color: #B47287;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
-        /* Êàñòîìíèé ñêðîëáàð äëÿ êðàñè */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1a2235; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+
+        .profile-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #B47287;
+            box-shadow: 0 0 20px rgba(180, 114, 135, 0.3);
+        }
+
+        .profile-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .option-card {
+            background-color: rgba(30, 41, 59, 0.8);
+            border: 1px solid #334155;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .option-card:hover:not(.disabled) {
+            color: #FFF200;
+            border-color: #B47287;
+            background: linear-gradient(135deg, rgba(180, 114, 135, 0.2) 0%, rgba(30, 41, 59, 0.9) 100%);
+            transform: translateY(-2px);
+        }
+
+        .option-card.correct {
+            border-color: #10b981;
+            background-color: rgba(16, 185, 129, 0.1);
+        }
+
+        .option-card.wrong {
+            border-color: #ef4444;
+            background-color: rgba(239, 68, 68, 0.1);
+        }
+
+        .option-card.disabled {
+            cursor: default;
+            opacity: 0.8;
+        }
+
+        .option-number {
+            font-weight: bold;
+            margin-right: 0.75rem;
+            color: #B47287;
+        }
+
+        .btn-action {
+            background-color: #B47287;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-action:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #334155;
+            border-radius: 3px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        #progress-fill {
+            height: 100%;
+            background: #B47287;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .hidden { display: none; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center p-4 md:p-10 font-sans selection:bg-[#d9778c] selection:text-white">
-    
-    <div id="app" class="w-full max-w-4xl w-full mt-4 md:mt-10">
-        <!-- Ñþäè äèíàì³÷íî ðåíäåðèòüñÿ êîíòåíò -->
+<body>
+
+    <!-- INTRO SCREEN -->
+    <div id="intro-screen" class="container">
+        <h1 class="main-title">HoÅŸ Geldiniz</h1>
+        <div class="profile-container">
+            <img src="https://avahr.com/wp-content/uploads/2021/12/HR-Assistant-Job-Description-Template.jpg.webp" alt="Derya HanÄ±m">
+        </div>
+        <div class="text-lg leading-relaxed mb-6">
+            <p>Merhaba, ben <strong>Derya HanÄ±m</strong> </p>
+            <p class="mt-2 text-slate-300 text-sm md:text-base">Ã–rsan Tekstil A.Åž. bÃ¼nyesindeki "Tekstil Ãœretim MÃ¼dÃ¼rÃ¼" pozisyonu iÃ§in mÃ¼lakat simÃ¼lasyonuna hoÅŸ geldiniz</p>
+            <p class="mt-4 font-semibold text-[#B47287]">BaÅŸarÄ±lar diliyorum</p>
+        </div>
+        <button onclick="startApp()" class="btn-action">Teste BaÅŸla</button>
+    </div>
+
+    <!-- TEST SCREEN -->
+    <div id="test-screen" class="container hidden">
+        <div class="flex justify-between items-center mb-2 text-xs text-slate-400 uppercase tracking-widest">
+            <span id="part-title">BÃ¶lÃ¼m 1</span>
+            <span id="question-counter">Soru: 1/20</span>
+        </div>
+        <div class="progress-bar">
+            <div id="progress-fill"></div>
+        </div>
+
+        <div id="question-container" class="text-left">
+            <p id="question-text" class="text-xl font-semibold mb-6">
+                <!-- Question goes here -->
+            </p>
+            <div id="options-list">
+                <!-- Options go here -->
+            </div>
+        </div>
+
+        <div id="feedback-area" class="mt-6 hidden">
+            <div id="feedback-message" class="p-4 rounded-lg mb-4 text-sm font-medium"></div>
+            <button id="next-btn" onclick="nextQuestion()" class="btn-action w-full">Sonraki Soru</button>
+        </div>
+    </div>
+
+    <!-- RESULT SCREEN -->
+    <div id="result-screen" class="container hidden">
+        <h1 class="main-title">MÃ¼lakat Sonucu</h1>
+        <div id="score-display" class="text-5xl font-bold mb-4 text-[#FFF200]">0</div>
+        <div id="result-label" class="text-2xl font-semibold mb-6 text-[#B47287]">SonuÃ§ YÃ¼kleniyor...</div>
+        
+        <div class="bg-slate-800/50 p-6 rounded-xl mb-6 text-left border border-slate-700">
+            <h3 class="font-bold text-slate-200 mb-2">Performans Ã–zeti:</h3>
+            <ul class="text-sm text-slate-400 space-y-2" id="stats-list">
+                <!-- Stats go here -->
+            </ul>
+        </div>
+
+        <button onclick="location.reload()" class="btn-action">Tekrar Dene</button>
     </div>
 
     <script>
-        // 1. Ñòàí äîäàòêó
-        let currentStep = 0;
-        
-        // Ìàñèâ çàïèòàíü (ñòâîðèëà 2 äëÿ äåìîíñòðàö³¿ ïåðåõîäó)
-        const questions = [
-            {
-                section: "B?L?M 1: ??VEREN SORULARI",
-                speaker: "Derya Han?m",
-                text: "Bize biraz kendinizden ve tekstil sekt?r?ndeki i? tecr?benizden bahseder misiniz?",
-                options: [
-                    "Tekstil sekt?r?nde sekiz y?ld?r ?al???yorum; kuma? ?retimi ve tedarik zinciri y?netimi konular?nda kapsaml? mesleki deneyimim var.", // Ç êðàïêîþ
-                    "Asl?nda tekstil sekt?r?yle ilgim yok, ama ??renmeye haz?r?m", // Áåç êðàïêè
-                    "Ge?en y?l bir m?lakat yapt?m ve ?ok g?zel bir deneyimdi.", // Ç êðàïêîþ
-                    "Kariyer.net ?zerinden bu pozisyona ba?vurdum, o kadar." // Ç êðàïêîþ
-                ]
-            },
-            {
-                section: "B?L?M 1: ??VEREN SORULARI",
-                speaker: "Derya Han?m",
-                text: "Kriz anlar?nda veya yo?un bask? alt?nda ?al???rken stres y?netimi konusunda nas?ls?n?z?",
-                options: [
-                    "Stresli durumlarda sakinli?imi korur ve ??z?m odakl? ilerlerim.",
-                    "Genelde panik yapar?m ama sonra toparlar?m",
-                    "Stresli ortamlarda ?al??may? hi? sevmem ve verimim d??er.",
-                    "Duruma g?re de?i?ir, bazen iyi bazen k?t? idare ederim."
-                ]
-            }
-        ];
-
-        // 2. Ôóíêö³ÿ äëÿ ïåðåì³øóâàííÿ ìàñèâó (Çàâäàííÿ 2)
-        function shuffleArray(array) {
-            let currentIndex = array.length, randomIndex;
-            while (currentIndex !== 0) {
-                randomIndex = Math.floor(Math.random() * currentIndex);
-                currentIndex--;
-                [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-            }
-            return array;
-        }
-
-        // 3. Ãîëîâíà ôóíêö³ÿ ðåíäåðó åêðàíó
-        function render() {
-            const app = document.getElementById('app');
-            const q = questions[currentStep];
-            const totalQuestions = 20; // Æîðñòêî çàäàíî 20 ÿê íà ñêð³íøîò³ (SORU: 1/20)
-
-            // Çàâäàííÿ 1: Ïðèáèðàºìî êðàïêè â ê³íö³ êîæíîãî âàð³àíòà
-            let processedOptions = q.options.map(opt => {
-                return opt.trim().replace(/\.$/, ''); 
-            });
-
-            // Çàâäàííÿ 2: Ðàíäîìíî ïåðåì³øóºìî âàð³àíòè
-            processedOptions = shuffleArray([...processedOptions]);
-
-            // Âèðàõîâóºìî ïðîãðåñ äëÿ ñìóãè
-            const progressPercent = ((currentStep + 1) / totalQuestions) * 100;
-
-            // Áóäóºìî HTML ñòðóêòóðó
-            let html = `
-                <!-- Âåðõí³é êîëîíòèòóë -->
-                <div class="flex justify-between text-[11px] md:text-xs tracking-widest text-gray-400 mb-3 uppercase font-semibold">
-                    <span>${q.section}</span>
-                    <span>SORU: ${currentStep + 1}/${totalQuestions}</span>
-                </div>
-                
-                <!-- Ïðîãðåñ áàð -->
-                <div class="w-full h-[3px] bg-gray-700 rounded mb-10 overflow-hidden">
-                    <div class="h-full bg-[#d9778c] rounded transition-all duration-500 ease-out" style="width: ${progressPercent}%;"></div>
-                </div>
-
-                <!-- Òåêñò çàïèòàííÿ -->
-                <h2 class="text-xl md:text-2xl mb-8 leading-relaxed">
-                    <span class="text-[#d9778c] font-semibold">${q.speaker}:</span>
-                    <span class="font-medium text-gray-100 ml-1">${q.text}</span>
-                </h2>
-
-                <!-- Âàð³àíòè â³äïîâ³äåé -->
-                <div class="flex flex-col gap-4">
-            `;
-
-            // Ðåíäåðèìî êíîïêè ç âàð³àíòàìè (Çàâäàííÿ 4: êë³ê = âèá³ð ³ ïåðåõ³ä)
-            processedOptions.forEach((opt, index) => {
-                html += `
-                    <div onclick="selectOption()" class="option-card p-5 md:px-6 md:py-5 rounded-xl text-[15px] md:text-base flex items-start gap-4 transition-all duration-200 shadow-sm">
-                        <span class="text-[#d9778c] font-bold mt-0.5 min-w-[20px]">${index + 1}.</span>
-                        <span class="text-gray-200 leading-relaxed">${opt}</span>
-                    </div>
-                `;
-            });
-
-            html += `</div>`;
-
-            // Çàâäàííÿ 3: Êíîïêà "Geri D?n" (ç'ÿâëÿºòüñÿ ò³ëüêè ÿêùî öå íå ïåðøå çàïèòàííÿ)
-            if (currentStep > 0) {
-                html += `
-                    <div class="mt-10 flex justify-start">
-                        <button onclick="goBack()" class="px-8 py-3 bg-transparent border border-[#d9778c] text-[#d9778c] text-sm font-semibold rounded hover:bg-[#d9778c] hover:text-white transition-all duration-300">
-                            Geri D?n
-                        </button>
-                    </div>
-                `;
-            }
-
-            // Îíîâëþºìî DOM
-            app.innerHTML = html;
-        }
-
-        // 4. Ëîã³êà âèáîðó òà àâòî-ïåðåõîäó (Çàâäàííÿ 4)
-        function selectOption() {
-            // Çàòðèìêà 150ìñ äëÿ â³çóàëüíîãî â³äãóêó êë³êó
-            setTimeout(() => {
-                if (currentStep < questions.length - 1) {
-                    currentStep++;
-                    render();
-                } else {
-                    // Êîëè çàïèòàííÿ çàê³í÷óþòüñÿ
-                    document.getElementById('app').innerHTML = `
-                        <div class="text-center mt-32">
-                            <h2 class="text-3xl text-white mb-4 font-bold">Test Tamamland?!</h2>
-                            <p class="text-gray-400 mb-10">Äåìîíñòðàö³ÿ çàâåðøåíà.</p>
-                            <button onclick="currentStep = 0; render();" class="px-8 py-3 bg-[#d9778c] text-white font-semibold rounded hover:bg-[#c4657a] transition-all duration-300 shadow-lg">
-                                Ba?tan Ba?la (Ïî÷àòè çíîâó)
-                            </button>
-                        </div>
-                    `;
+        const appData = {
+            "parts": [
+                {
+                    "title": "BÃ¶lÃ¼m 1: Ä°ÅŸveren SorularÄ±",
+                    "questions": [
+                        { "question": "Bize biraz kendinizden ve tekstil sektÃ¶rÃ¼ndeki iÅŸ tecrÃ¼benizden bahseder misiniz?", "options": [{ "text": "Tekstil sektÃ¶rÃ¼nde sekiz yÄ±ldÄ±r Ã§alÄ±ÅŸÄ±yorum; kumaÅŸ Ã¼retimi ve tedarik zinciri yÃ¶netimi konularÄ±nda kapsamlÄ± mesleki deneyimim var.", "correct": true }, { "text": "AslÄ±nda tekstil sektÃ¶rÃ¼yle ilgim yok, ama Ã¶ÄŸrenmeye hazÄ±rÄ±m.", "correct": false }, { "text": "GeÃ§en yÄ±l bir mÃ¼lakat yaptÄ±m ve Ã§ok gÃ¼zel bir deneyimdi.", "correct": false }, { "text": "Kariyer.net Ã¼zerinden bu pozisyona baÅŸvurdum, o kadar.", "correct": false }] },
+                        { "question": "Tekstil Ã¼retim sÃ¼reÃ§lerinde verimliliÄŸi artÄ±rmak iÃ§in hangi yÃ¶ntemleri kullandÄ±nÄ±z?", "options": [{ "text": "HaftalÄ±k toplantÄ±lar dÃ¼zenlemeyi severim.", "correct": false }, { "text": "Kaizen felsefesini benimseyerek sÃ¼rekli iyileÅŸtirme kÃ¼ltÃ¼rÃ¼ oluÅŸturduk; verimlilik teknikleriyle maliyetleri %15 dÃ¼ÅŸÃ¼rdÃ¼k.", "correct": true }, { "text": "VerimliliÄŸi artÄ±rmak iÃ§in personel sayÄ±sÄ±nÄ± azalttÄ±k.", "correct": false }, { "text": "Bu konuda deneyimim bulunmamaktadÄ±r.", "correct": false }] },
+                        { "question": "Ekip yÃ¶netimi konusundaki yaklaÅŸÄ±mÄ±nÄ±z nedir? Ekibinize nasÄ±l yetki verirsiniz?", "options": [{ "text": "Ekipteki herkese eÅŸit maaÅŸ veririm.", "correct": false }, { "text": "MÃ¼lakatlarda adaylarÄ± titizlikle deÄŸerlendiririm.", "correct": false }, { "text": "Ekip Ã¼yelerinin gÃ¼Ã§lÃ¼ yÃ¶nlerini belirleyerek onlarÄ± yetkilendiririm; sorumluluk alanlarÄ±nÄ± net ÅŸekilde tanÄ±mlarÄ±m.", "correct": true }, { "text": "Ekip oyuncusu olmayÄ± sevmem, baÄŸÄ±msÄ±z Ã§alÄ±ÅŸmayÄ± tercih ederim.", "correct": false }] },
+                        { "question": "Tedarik zinciri yÃ¶netimi konusunda ne tÃ¼r deneyimleriniz var?", "options": [{ "text": "Lojistik sÃ¼reÃ§leri optimize ettim ve tedarikÃ§i iliÅŸkilerini geliÅŸtirerek operasyonel mÃ¼kemmellik saÄŸladÄ±m.", "correct": true }, { "text": "Sadece muhasebe departmanÄ±yla Ã§alÄ±ÅŸtÄ±m.", "correct": false }, { "text": "Tedarik zinciri nedir, tam olarak bilmiyorum.", "correct": false }, { "text": "Ä°nsan kaynaklarÄ± alanÄ±nda Ã§alÄ±ÅŸtÄ±m.", "correct": false }] },
+                        { "question": "Kalite yÃ¶netimi sÃ¼reÃ§lerinde nasÄ±l bir rol Ã¼stlendiniz? Somut bir Ã¶rnek verir misiniz?", "options": [{ "text": "Kaliteyi her zaman Ã¶nemserim ama somut bir Ã¶rnek aklÄ±ma gelmiyor.", "correct": false }, { "text": "Kalite yÃ¶netimi sistemini baÅŸtan tasarladÄ±m; Ã¼retim hatalarÄ±nÄ± iyileÅŸtirerek Ã¼rÃ¼n iade oranÄ±nÄ± %30 azalttÄ±m.", "correct": true }, { "text": "Kalite yÃ¶netimi mÃ¼dÃ¼rÃ¼nÃ¼n gÃ¶revidir, benim sorumluluk alanÄ±m deÄŸil.", "correct": false }, { "text": "Kalite belgelerini arÅŸivledim.", "correct": false }] },
+                        { "question": "Tekstil MÃ¼hendisliÄŸi eÄŸitiminiz bu pozisyon iÃ§in sizi nasÄ±l hazÄ±rladÄ±?", "options": [{ "text": "AldÄ±ÄŸÄ±m eÄŸitim sayesinde kumaÅŸ Ã¼retimi, lif teknolojileri ve Ã¼retim sÃ¼reÃ§ yÃ¶netimi konularÄ±nda teknik temel edindim.", "correct": true }, { "text": "Ãœniversite eÄŸitiminin iÅŸ hayatÄ±yla pek ilgisi yok bence.", "correct": false }, { "text": "Hukuk fakÃ¼ltesinden mezun oldum.", "correct": false }, { "text": "EÄŸitimim boyunca sadece yabancÄ± dil Ã¶ÄŸrendim.", "correct": false }] },
+                        { "question": "GÃ¼ncel teknolojiyi tekstil Ã¼retiminde nasÄ±l kullanÄ±yorsunuz?", "options": [{ "text": "Klasik yÃ¶ntemleri tercih ederim.", "correct": false }, { "text": "Sosyal medyayÄ± aktif kullanÄ±yorum.", "correct": false }, { "text": "ERP sistemleri ve otomatik dokuma makineleri gibi modern teknolojiyi Ã¼retim sÃ¼reÃ§lerine entegre ettim.", "correct": true }, { "text": "Bilgisayar kullanmayÄ± biliyorum.", "correct": false }] },
+                        { "question": "Problem Ã§Ã¶zme yetkinliÄŸinizi gÃ¶steren bir durumu anlatÄ±r mÄ±sÄ±nÄ±z?", "options": [{ "text": "Problemleri genellikle mÃ¼dÃ¼rÃ¼me bÄ±rakÄ±rÄ±m.", "correct": false }, { "text": "Kritik bir aksamada alternatif tedarikÃ§i buldum, ekibi organize ettim ve teslimat sÃ¼resini korudum.", "correct": true }, { "text": "Problem Ã§Ä±kmamasÄ± iÃ§in hiÃ§bir ÅŸey yapmam.", "correct": false }, { "text": "SorunlarÄ± genellikle gÃ¶rmezden gelmeyi tercih ederim.", "correct": false }] },
+                        { "question": "Bu pozisyonda stratejik vizyonunuz nedir? Åžirkete nasÄ±l katkÄ± saÄŸlamayÄ± planlÄ±yorsunuz?", "options": [{ "text": "MaaÅŸÄ±mÄ± almak ve gÃ¶revimi yapmak istiyorum.", "correct": false }, { "text": "Operasyon yÃ¶netimini gÃ¼Ã§lendirerek teknik liderlik rolÃ¼nÃ¼ Ã¼stlenmek ve uzun vadeli bÃ¼yÃ¼meye destek olmak Ã¶nceliÄŸim.", "correct": true }, { "text": "HenÃ¼z dÃ¼ÅŸÃ¼nmedim.", "correct": false }, { "text": "Buradaki kadroyu tamamen deÄŸiÅŸtirmek istiyorum.", "correct": false }] },
+                        { "question": "Mesleki nitelikleriniz arasÄ±nda bu pozisyon iÃ§in en ayÄ±rt edici olanÄ± hangisidir?", "options": [{ "text": "Ä°ngilizce biliyorum.", "correct": false }, { "text": "Teknik becerilerimi stratejik vizyon ile birleÅŸtirme kapasitemdir; hem operasyonu hem ekibi yÃ¶netebiliyorum.", "correct": true }, { "text": "Ã‡ok Ã§alÄ±ÅŸkandÄ±m, yani erken gelip geÃ§ gidiyorum.", "correct": false }, { "text": "Daha Ã¶nce benzer bir mÃ¼lakattan geÃ§tim.", "correct": false }] }
+                    ]
+                },
+                {
+                    "title": "BÃ¶lÃ¼m 2: Aday SorularÄ±",
+                    "questions": [
+                        { "question": "Bu pozisyonun sorumluluk alanÄ± ve iÅŸ kapsamÄ± hakkÄ±nda daha fazla bilgi alabilir miyim?", "options": [{ "text": "Sorumluluk alanÄ± yok, sadece Ã¼retim yapÄ±yorsunuz.", "correct": false }, { "text": "Bu pozisyonun sorumluluk alanÄ± oldukÃ§a geniÅŸ; Ã¼retim, kalite ve tedarik zinciri sÃ¼reÃ§lerini kapsamaktadÄ±r.", "correct": true }, { "text": "SorumluluklarÄ± ilerleyen gÃ¼nlerde Ã¶ÄŸrenirsiniz.", "correct": false }, { "text": "Sadece evrak iÅŸleriyle ilgileneceksiniz.", "correct": false }] },
+                        { "question": "BrÃ¼t ve net maaÅŸ konusunda bilgi verebilir misiniz? MaaÅŸ beklentimi paylaÅŸabilir miyim?", "options": [{ "text": "MaaÅŸ hakkÄ±nda konuÅŸmak uygun deÄŸil.", "correct": false }, { "text": "Elbette; brÃ¼t maaÅŸ aralÄ±ÄŸÄ±nÄ± paylaÅŸabilirim, sizin beklentinizi de Ã¶ÄŸrenmek isteriz.", "correct": true }, { "text": "Net maaÅŸ brÃ¼t maaÅŸla aynÄ±dÄ±r.", "correct": false }, { "text": "MaaÅŸ iÅŸ sÃ¶zleÅŸmesinde yazmaz.", "correct": false }] },
+                        { "question": "Åžirketin sunduÄŸu yan haklar nelerdir? Ã–zel saÄŸlÄ±k sigortasÄ± ve yemek desteÄŸi var mÄ±?", "options": [{ "text": "Yan hak sunmuyoruz.", "correct": false }, { "text": "Åžirketimiz; Ã¶zel saÄŸlÄ±k sigortasÄ±, yemek ve yol desteÄŸi gibi kapsamlÄ± yan haklar sunmaktadÄ±r.", "correct": true }, { "text": "Yan haklarÄ± kendiniz karÅŸÄ±lamanÄ±z gerekiyor.", "correct": false }, { "text": "YalnÄ±zca yÄ±llÄ±k Ã¼cretli izin hakkÄ± veriyoruz.", "correct": false }] },
+                        { "question": "Deneme sÃ¼resi ne kadar ve bu sÃ¼reÃ§te nasÄ±l bir deÄŸerlendirme yapÄ±lÄ±yor?", "options": [{ "text": "Deneme sÃ¼resi yoktur.", "correct": false }, { "text": "Ä°ÅŸ Kanunu Ã§erÃ§evesinde iki aylÄ±k deneme sÃ¼remiz bulunmakta; uyum ve performansÄ±nÄ±z deÄŸerlendirilmektedir.", "correct": true }, { "text": "Deneme sÃ¼resi on yÄ±ldÄ±r.", "correct": false }, { "text": "DeÄŸerlendirme yapÄ±lmÄ±yor.", "correct": false }] },
+                        { "question": "Performans primi sistemi var mÄ±? BaÅŸarÄ±ya baÄŸlÄ± ek Ã¶deme nasÄ±l hesaplanÄ±yor?", "options": [{ "text": "Prim sistemi tamamen rastgele belirleniyor.", "correct": false }, { "text": "Evet, performans primi sistemimiz mevcut; yÄ±llÄ±k hedefler Ã¼zerinden deÄŸerlendirme yapÄ±lÄ±r.", "correct": true }, { "text": "Prim sadece Ã¼st dÃ¼zey yÃ¶neticilere verilir.", "correct": false }, { "text": "Prim yerine terfi veriyoruz.", "correct": false }] },
+                        { "question": "YÄ±llÄ±k Ã¼cretli izin hakkÄ±m ne kadar? Ä°zin kullanÄ±mÄ± konusunda esneklik var mÄ±?", "options": [{ "text": "Ä°zin hakkÄ± bulunmamaktadÄ±r.", "correct": false }, { "text": "Kanuni yÄ±llÄ±k Ã¼cretli izin hakkÄ±nÄ±z 14 iÅŸ gÃ¼nÃ¼dÃ¼r; ÅŸirketimiz esnek planlamayÄ± destekler.", "correct": true }, { "text": "Ä°zin almak neredeyse imkansÄ±zdÄ±r.", "correct": false }, { "text": "Ä°zinleri yalnÄ±zca AÄŸustos ayÄ±nda kullanabilirsiniz.", "correct": false }] },
+                        { "question": "Ä°hbar sÃ¼resi konusunda bilgi alabilir miyim? OlasÄ± bir istifada sÃ¼reÃ§ nasÄ±l iÅŸliyor?", "options": [{ "text": "Ä°stifa bildirim yapmadan direkt ayrÄ±labilirsiniz.", "correct": false }, { "text": "Ä°hbar sÃ¼remiz Ä°ÅŸ Kanunu'na gÃ¶re belirlenmekte; kÄ±deme baÄŸlÄ± olarak 2-8 hafta arasÄ±ndadÄ±r.", "correct": true }, { "text": "Ä°hbar sÃ¼resi yoktur.", "correct": false }, { "text": "Ä°stifa etmek yasaktÄ±r.", "correct": false }] },
+                        { "question": "Åžirketteki iÅŸ hiyerarÅŸisi nasÄ±l? Bu pozisyonunda kime rapor vereceÄŸim?", "options": [{ "text": "HiyerarÅŸi yoktur.", "correct": false }, { "text": "Net bir hiyerarÅŸimiz var; doÄŸrudan Genel MÃ¼dÃ¼r'e rapor vereceksiniz.", "correct": true }, { "text": "Kime rapor vereceÄŸinizi sonradan Ã¶ÄŸrenirsiniz.", "correct": false }, { "text": "Ä°stediÄŸiniz kiÅŸiyle Ã§alÄ±ÅŸÄ±rsÄ±nÄ±z.", "correct": false }] },
+                        { "question": "Åžirket, Ã§alÄ±ÅŸanlarÄ±n mesleki geliÅŸimi iÃ§in ne tÃ¼r olanaklar sunuyor?", "options": [{ "text": "Mesleki geliÅŸim Ã§alÄ±ÅŸanÄ±n kendi sorumluluÄŸundadÄ±r.", "correct": false }, { "text": "Teknik eÄŸitimler, sektÃ¶r konferanslarÄ± ve geliÅŸim programlarÄ± ile yetkinlikleri artÄ±rmayÄ± teÅŸvik ediyoruz.", "correct": true }, { "text": "EÄŸitim bÃ¼tÃ§emiz yok.", "correct": false }, { "text": "Sadece yeni mezunlara eÄŸitim veriyoruz.", "correct": false }] },
+                        { "question": "Ä°ÅŸ sÃ¶zleÅŸmesi ne zaman imzalanacak ve iÅŸe baÅŸlama tarihinde esneklik var mÄ±?", "options": [{ "text": "SÃ¶zlÃ¼ anlaÅŸma yeterli.", "correct": false }, { "text": "Resmi teklif iletilecek; kabulÃ¼nÃ¼zden sonra imzalanacak ve tarihi birlikte belirleyebiliriz.", "correct": true }, { "text": "SÃ¶zleÅŸme deneme sÃ¼resi bitince imzalanÄ±r.", "correct": false }, { "text": "Esneklik yoktur.", "correct": false }] }
+                    ]
                 }
-            }, 150); 
+            ]
+        };
+
+        let currentPartIndex = 0;
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let totalQuestionsCount = 20;
+
+        function startApp() {
+            document.getElementById('intro-screen').classList.add('hidden');
+            document.getElementById('test-screen').classList.remove('hidden');
+            showQuestion();
         }
 
-        // 5. Ëîã³êà ïîâåðíåííÿ íàçàä
-        function goBack() {
-            if (currentStep > 0) {
-                currentStep--;
-                render();
+        function showQuestion() {
+            const part = appData.parts[currentPartIndex];
+            const question = part.questions[currentQuestionIndex];
+            
+            // Header Info
+            document.getElementById('part-title').innerText = part.title;
+            const globalIndex = (currentPartIndex * 10) + currentQuestionIndex + 1;
+            document.getElementById('question-counter').innerText = `Soru: ${globalIndex}/${totalQuestionsCount}`;
+            
+            // Progress
+            const progress = (globalIndex / totalQuestionsCount) * 100;
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+
+            // Question Text
+            document.getElementById('question-text').innerHTML = `<span class="text-[#B47287]">Derya HanÄ±m:</span> ${question.question}`;
+
+            // Options
+            const optionsList = document.getElementById('options-list');
+            optionsList.innerHTML = '';
+            question.options.forEach((opt, idx) => {
+                const card = document.createElement('div');
+                card.className = 'option-card';
+                card.innerHTML = `<span class="option-number">${idx + 1}.</span> ${opt.text}`;
+                card.onclick = () => handleSelection(card, opt.correct);
+                optionsList.appendChild(card);
+            });
+
+            document.getElementById('feedback-area').classList.add('hidden');
+        }
+
+        function handleSelection(element, isCorrect) {
+            if (document.getElementById('feedback-area').classList.contains('hidden') === false) return;
+
+            const cards = document.querySelectorAll('.option-card');
+            cards.forEach(c => c.classList.add('disabled'));
+
+            const feedbackMsg = document.getElementById('feedback-message');
+            const feedbackArea = document.getElementById('feedback-area');
+
+            if (isCorrect) {
+                element.classList.add('correct');
+                score += 5;
+                feedbackMsg.innerText = "Tebrikler! Bu profesyonel ve sektÃ¶re uygun bir cevaptÄ±r. âœ…";
+                feedbackMsg.className = "p-4 rounded-lg mb-4 text-sm font-medium bg-green-900/40 text-green-300 border border-green-700";
+            } else {
+                element.classList.add('wrong');
+                feedbackMsg.innerText = "Bu cevap mÃ¼lakat iÃ§in uygun deÄŸil. LÃ¼tfen profesyonel dili kullanmaya Ã¶zen gÃ¶sterin. âŒ";
+                feedbackMsg.className = "p-4 rounded-lg mb-4 text-sm font-medium bg-red-900/40 text-red-300 border border-red-700";
+                
+                // Highlight correct one
+                cards.forEach((c, idx) => {
+                    const part = appData.parts[currentPartIndex];
+                    if (part.questions[currentQuestionIndex].options[idx].correct) {
+                        c.classList.add('correct');
+                    }
+                });
+            }
+
+            feedbackArea.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex >= 10) {
+                currentPartIndex++;
+                currentQuestionIndex = 0;
+            }
+
+            if (currentPartIndex >= appData.parts.length) {
+                showResults();
+            } else {
+                showQuestion();
             }
         }
 
-        // Çàïóñê
-        init();
-        function init() {
-            render();
+        function showResults() {
+            document.getElementById('test-screen').classList.add('hidden');
+            const resultScreen = document.getElementById('result-screen');
+            resultScreen.classList.remove('hidden');
+
+            document.getElementById('score-display').innerText = score;
+            
+            let label = "";
+            if (score >= 90) label = "MÃ¼kemmel â€” Ä°ÅŸe alÄ±ndÄ±nÄ±z! ðŸŽ‰";
+            else if (score >= 70) label = "Ã‡ok Ä°yi â€” GÃ¼Ã§lÃ¼ bir aday ðŸ‘";
+            else if (score >= 50) label = "Orta â€” Biraz daha Ã§alÄ±ÅŸmalÄ±sÄ±n ðŸ“š";
+            else label = "Yetersiz â€” Tekrar deneyin ðŸ”„";
+
+            document.getElementById('result-label').innerText = label;
+
+            const statsList = document.getElementById('stats-list');
+            statsList.innerHTML = `
+                <li>â€¢ Toplam Puan: ${score} / 100</li>
+                <li>â€¢ DoÄŸru Cevap SayÄ±sÄ±: ${score / 5}</li>
+                <li>â€¢ MÃ¼lakat DÃ¼zeyi: B2/C1 Profesyonel</li>
+            `;
         }
     </script>
 </body>
